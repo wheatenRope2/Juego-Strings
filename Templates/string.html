@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheeet" href="../Statics/string.css">
     <title>Juego Strings</title>
 </head>
@@ -13,4 +14,60 @@
     </div>
 </body>
 <script src="../Dynamics/string.js"></script>
+=======
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <button class="btn" id="btn-contador">Contador</button>
+        <button class="btn" id="btn-buscador">Buscador</button>
+        <button class="btn" id="btn-acronimo">Acrónimo</button>
+    </div>
+
+    <header><h1>Juego de Palabras</h1></header>
+    <br>
+    <div style=display:none class="contenedor2" id="contador">
+        <h1>Contador</h1>
+        <br>
+        <label for="contador-input">Texto: </label>
+        <input type="text" id="contador-input" placeholder="Ingresa el texto aquí...">
+
+        <button id="ejecutar-contador">Ejecutar</button>
+        
+        <div class="result-pantalla" id="result-contador">
+            El resultado aparecerá aquí...
+        </div>
+    </div>
+
+    <div style=display:none class="contenedor2" id="buscador">
+        <h1>Buscador de Palabras</h1>
+        <br>
+        <label for="buscador">Texto: </label>
+        <input type="text" id="buscador" placeholder="Ingresa el texto aquí...">
+        <label for="buscador">Palabra buscada:</label>
+        <input type="text" id="palabra-buscada" placeholder="Ingresa la palabra que estas buscando:">
+
+        <button id="ejecutar-buscador">Ejecutar</button>
+        
+        <div class="result-pantalla" id="result-buscador">
+            El resultado aparecerá aquí...
+        </div>
+
+    </div>
+
+    <div style=display:none class="contenedor2" id ="acronimos">
+        <h1>Acrónimo</h1>
+        <br>
+        <label for="acrononimo-input">Texto: </label>
+        <input type="text" id="acronimo-input" placeholder="Ingresa el texto aquí...">
+
+        <button id="ejecutar-acronimo">Ejecutar</button>
+        
+        <div class="result-pantalla" id="result-acronimo">
+            El acrónimo aparecerá aquí...
+        </div>
+
+    </div>
+</body>
+>>>>>>> 75b954fe6f46633294f9e47dfd356d70cf01b907
 </html>
