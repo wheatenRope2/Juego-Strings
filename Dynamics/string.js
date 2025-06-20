@@ -11,6 +11,7 @@ let botonContador = document.getElementById("btn-contador");
 let botonBuscador = document.getElementById("btn-buscador");
 let botonAcronimos = document.getElementById("btn-acronimo");
 
+
 botonContador.addEventListener("click", function(){
     contenedorContador.style.display = "block";
     contenedorBuscador.style.display = "none";
@@ -95,4 +96,39 @@ botonAcronimosExe.addEventListener("click", function(){
     acronimo = acronimo.toUpperCase();
     console.log(acronimo);
     resultadoAcronimo.innerHTML = "El acrónimo es: " + acronimo;
+});
+
+//Buscador de texto
+let texto= document.getElementById("input-texto");
+let buscar = document.getElementById("input-buscador");
+let resultado = document.getElementById("resultado");
+let textoResaltado = document.getElementById("textoResaltado");
+
+
+document.getElementById("ejecutar-buscador").addEventListener("click", function(){
+    let textoMinus = texto.value.toLowerCase();
+    let buscarMinus = buscar.value.toLowerCase();
+    let contador = 0;
+
+    for(let i=0; i<=texto.value.length; i++){
+        if(textoMinus[i] === buscarMinus[0]){
+            let encontrado = true;
+            for(let j=0; j<buscarMinus.length; j++){
+                if(textoMinus[i+j] !== buscarMinus[j]){
+                    encontrado = false;
+                    break;
+                }
+            }
+            if(encontrado){
+                contador++;
+                textoResaltado.innerHTML += `<span class="resaltado">${buscar.value}</span>`;
+                i += buscarMinus.length - 1; // Saltar el largo del texto buscado
+            } else {
+                textoResaltado.innerHTML += texto.value[i];
+            }
+            
+        }
+
+    }
+    
 });
