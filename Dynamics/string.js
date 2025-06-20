@@ -121,10 +121,12 @@ document.getElementById("ejecutar-buscador").addEventListener("click", function(
             }
             if(encontrado){
                 contador++;
-                textoResaltado.innerHTML += `<span class="resaltado">${buscar.value}</span>`;
+                textoResaltado.innerHTML = `<span class="resaltado">${buscar.value}</span><br>`;
+                resultado.innerHTML = `<span class="resaltado">Se encontro ${contador} veces la palabra ${buscar.value} en el texto ${texto.value}</span>`;
+
                 i += buscarMinus.length - 1; // Saltar el largo del texto buscado
             } else {
-                textoResaltado.innerHTML += texto.value[i];
+                textoResaltado.innerHTML += `<span class="resaltado">No es encontro ninguna coincidencia con: ${buscar.value}</span>`;
             }
             
         }
