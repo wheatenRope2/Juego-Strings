@@ -5,6 +5,10 @@ let resultadoCaracteresSin = document.getElementById("resultCaracteresSin");
 let resultadoPalabras = document.getElementById("resultPalabras");
 let resultadoMasLarga = document.getElementById("resultMasLargas");
 
+let acronimoInput = document.getElementById("acronimo-input");
+let botonAcronimosExe = document.getElementById("ejecutar-acronimo");
+let resultadoAcronimo = document.getElementById("acronimo");
+
 botonContadorExe.addEventListener("click", function(){
     let strContador = contadorInput.value;
     console.log(strContador);
@@ -50,4 +54,21 @@ botonContadorExe.addEventListener("click", function(){
     }
     resultadoMasLarga.innerHTML = "La(s) palabra(s) más larga(s) es(son): " + palabraMasLarga;
     console.log("La(s) palabra(s) más larga(s) es/son: " + palabraMasLarga);
+});
+
+botonAcronimosExe.addEventListener("click", function(){
+    let strAcronimo = acronimoInput.value;
+    strAcronimo = strAcronimo.trim();
+    let palabrasAcronimo = strAcronimo.split(" ");
+    let palabrasIgnoradas = ["de", "la", "y", "del"]
+    let acronimo = "";
+
+    for(let x = 0; x < palabrasAcronimo.length; x++){
+        if(!palabrasIgnoradas.includes(palabrasAcronimo[x].toLowerCase())){
+            acronimo += palabrasAcronimo[x].slice(0,1);
+        }
+    }
+    acronimo = acronimo.toUpperCase();
+    console.log(acronimo);
+    resultadoAcronimo.innerHTML = "El acrónimo es: " + acronimo;
 });
