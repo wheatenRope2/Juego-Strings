@@ -4,6 +4,30 @@ let resultadoCaracteresCon = document.getElementById("resultCaracteresCon");
 let resultadoCaracteresSin = document.getElementById("resultCaracteresSin");
 let resultadoPalabras = document.getElementById("resultPalabras");
 let resultadoMasLarga = document.getElementById("resultMasLargas");
+let contenedorContador = document.getElementById("contador");
+let contenedorBuscador = document.getElementById("buscador");
+let contenedorAcronimos = document.getElementById("acronimos");
+let botonContador = document.getElementById("btn-contador");
+let botonBuscador = document.getElementById("btn-buscador");
+let botonAcronimos = document.getElementById("btn-acronimo");
+
+botonContador.addEventListener("click", function(){
+    contenedorContador.style.display = "block";
+    contenedorBuscador.style.display = "none";
+    contenedorAcronimos.style.display = "none"
+});
+
+botonBuscador.addEventListener("click", function(){
+    contenedorContador.style.display = "none";
+    contenedorBuscador.style.display = "block";
+    contenedorAcronimos.style.display = "none"
+});
+
+botonAcronimos.addEventListener("click", function(){
+    contenedorContador.style.display = "none";
+    contenedorBuscador.style.display = "none";
+    contenedorAcronimos.style.display = "block"
+});
 
 let acronimoInput = document.getElementById("acronimo-input");
 let botonAcronimosExe = document.getElementById("ejecutar-acronimo");
